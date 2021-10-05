@@ -11,7 +11,7 @@ import reactor.core.publisher.Sinks;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class NotificationCreatedEventPublisher {
+public class NotificationCreatedEventProducer {
 
     // The latest element pushed to this sink are remembered, even when there is no subscriber. Older elements are discarded
     // Backpressure : this sink honors downstream demand of individual subscribers.

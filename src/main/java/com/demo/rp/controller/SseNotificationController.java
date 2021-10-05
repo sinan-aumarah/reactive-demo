@@ -1,6 +1,6 @@
 package com.demo.rp.controller;
 
-import com.demo.rp.events.NotificationCreatedEventPublisher;
+import com.demo.rp.events.NotificationCreatedEventProducer;
 import com.demo.rp.domain.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +22,13 @@ public class SseNotificationController {
     private final Flux<Notification> notificationCreatedEvents;
 
     @Autowired
-    public SseNotificationController(NotificationCreatedEventPublisher notificationCreatedEventPublisher) {
-        this.notificationCreatedEvents = notificationCreatedEventPublisher.getNotifications().share();
+    public SseNotificationController(NotificationCreatedEventProducer notificationCreatedEventProducer) {
+        this.notificationCreatedEvents = notificationCreatedEventProducer.getNotifications().share();
     }
 
     @GetMapping(value = SSE_NOTIFICATION_END_POINT_V1, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ServerSentEvent<Notification>> notificationsFlux(ServerHttpResponse response) {
-        setResponseHeaders(response);
+        addResponseHeaders(response);
 
         return notificationCreatedEvents.subscribeOn(Schedulers.boundedElastic())
                 .map(notification ->
@@ -38,7 +38,7 @@ public class SseNotificationController {
                                 .build());
     }
 
-    private void setResponseHeaders(ServerHttpResponse response) {
+    private void addResponseHeaders(ServerHttpResponse response) {
         // need this header due to a bug with react-app proxy
         // https://github.com/facebook/create-react-app/issues/1633#issuecomment-447436206
         response.getHeaders().add("Cache-Control", "no-transform");

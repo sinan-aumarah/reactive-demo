@@ -1,6 +1,6 @@
 package com.demo.rp.service;
 
-import com.demo.rp.events.NotificationCreatedEventPublisher;
+import com.demo.rp.events.NotificationCreatedEventProducer;
 import com.demo.rp.domain.Notification;
 import com.demo.rp.domain.NotificationReactiveRepository;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @AllArgsConstructor
 public class NotificationService {
     private final NotificationReactiveRepository notificationReactiveRepository;
-    private final NotificationCreatedEventPublisher notificationCreatedEventPublisher;
+    private final NotificationCreatedEventProducer notificationCreatedEventProducer;
 
     public Flux<Notification> findAll() {
         return notificationReactiveRepository.findAll();
@@ -24,7 +24,7 @@ public class NotificationService {
 
     public Mono<Notification> save(Notification notification) {
         return notificationReactiveRepository.save(notification)
-                .doOnSuccess(this.notificationCreatedEventPublisher::emitNotification);
+                .doOnSuccess(this.notificationCreatedEventProducer::emitNotification);
     }
 
     public Mono<Void> deleteById(String id) {
