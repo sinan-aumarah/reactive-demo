@@ -1,4 +1,4 @@
-package com.atlassian.rp;
+package com.demo.rp;
 
 
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,8 @@
-package com.atlassian.rp.initialize;
+package com.demo.rp.initialize;
 
-import com.atlassian.rp.service.NotificationService;
+import com.demo.rp.service.NotificationService;
 import com.github.javafaker.Faker;
-import com.atlassian.rp.domain.Notification;
+import com.demo.rp.domain.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

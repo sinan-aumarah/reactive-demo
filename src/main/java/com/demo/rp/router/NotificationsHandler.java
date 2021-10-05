@@ -1,7 +1,7 @@
-package com.atlassian.rp.router;
+package com.demo.rp.router;
 
-import com.atlassian.rp.domain.Notification;
-import com.atlassian.rp.service.NotificationService;
+import com.demo.rp.domain.Notification;
+import com.demo.rp.service.NotificationService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

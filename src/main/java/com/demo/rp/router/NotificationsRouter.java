@@ -1,4 +1,4 @@
-package com.atlassian.rp.router;
+package com.demo.rp.router;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.web.reactive.function.server.RequestPredicates.DELETE;

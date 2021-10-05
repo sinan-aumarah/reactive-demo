@@ -1,4 +1,4 @@
-package com.atlassian.rp.domain;
+package com.demo.rp.domain;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 

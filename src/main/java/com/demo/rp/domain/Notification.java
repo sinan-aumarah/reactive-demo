@@ -1,4 +1,4 @@
-package com.atlassian.rp.domain;
+package com.demo.rp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

@@ -1,8 +1,8 @@
-package com.atlassian.rp.service;
+package com.demo.rp.service;
 
-import com.atlassian.rp.events.NotificationCreatedEventPublisher;
-import com.atlassian.rp.domain.Notification;
-import com.atlassian.rp.domain.NotificationReactiveRepository;
+import com.demo.rp.events.NotificationCreatedEventPublisher;
+import com.demo.rp.domain.Notification;
+import com.demo.rp.domain.NotificationReactiveRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

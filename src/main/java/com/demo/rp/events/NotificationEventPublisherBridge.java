@@ -1,6 +1,6 @@
-package com.atlassian.rp.events;
+package com.demo.rp.events;
 
-import com.atlassian.rp.domain.Notification;
+import com.demo.rp.domain.Notification;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;

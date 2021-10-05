@@ -1,7 +1,7 @@
-package com.atlassian.rp.controller;
+package com.demo.rp.controller;
 
-import com.atlassian.rp.events.NotificationCreatedEventPublisher;
-import com.atlassian.rp.domain.Notification;
+import com.demo.rp.events.NotificationCreatedEventPublisher;
+import com.demo.rp.domain.Notification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

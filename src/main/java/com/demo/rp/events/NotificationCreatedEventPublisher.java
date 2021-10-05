@@ -1,6 +1,6 @@
-package com.atlassian.rp.events;
+package com.demo.rp.events;
 
-import com.atlassian.rp.domain.Notification;
+import com.demo.rp.domain.Notification;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
